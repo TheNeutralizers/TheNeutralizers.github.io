@@ -1,5 +1,9 @@
 // JavaScript Code
 
+window.addEventListener('load', () => {
+    document.getElementById('send-button').disabled = false;
+});
+
 // URL of the Lambda function
 const lambdaUrl = 'https://ahkd7hrnc35u2syh7jdkww5a7m0kvwgk.lambda-url.eu-central-1.on.aws/';
 
@@ -82,9 +86,14 @@ function addMessage(text, sender, region = '') {
 
 function updateEnvironmentalData(data) {
     const environmentalData = document.getElementById('environmental-data');
+
+    // Round the values to two decimal places
+    const energyConsumption = parseFloat(data.estimated_energy_consumption_joules).toFixed(2);
+    const executionTime = parseFloat(data.total_execution_time_seconds).toFixed(2);
+
     environmentalData.innerHTML = `
         <p><strong>Token Usage:</strong> ${data.token_usage}</p>
-        <p><strong>Energy Consumption (Joules):</strong> ${data.estimated_energy_consumption_joules}</p>
-        <p><strong>Execution Time (seconds):</strong> ${data.total_execution_time_seconds}</p>
+        <p><strong>Energy Consumption (Joules):</strong> ${energyConsumption}</p>
+        <p><strong>Execution Time (seconds):</strong> ${executionTime}</p>
     `;
 }
