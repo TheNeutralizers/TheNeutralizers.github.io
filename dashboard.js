@@ -9,20 +9,8 @@ const map = new maplibregl.Map({
 // Array to store markers for easy removal during data refresh
 let markers = [];
 
-// Show loading overlay
-function showLoading() {
-    document.getElementById('loading-overlay').style.display = 'flex';
-}
-
-// Hide loading overlay
-function hideLoading() {
-    document.getElementById('loading-overlay').style.display = 'none';
-}
-
-// Fetch data and update map and list
+// Function to fetch data and update the map and list
 function fetchDataAndUpdate() {
-    showLoading();  // Show loading overlay before fetching data
-
     fetch('https://app.nocodb.com/api/v2/tables/m2zl15jsfkzxfrz/records', {
         method: 'GET',
         headers: {
@@ -39,8 +27,10 @@ function fetchDataAndUpdate() {
             return;
         }
         
-        clearMarkersAndList();  // Clear previous markers and list items
+        // Clear previous markers and list items
+        clearMarkersAndList();
 
+        // Loop through locations to create markers and list items
         for (let location of locations) {
             const coords = getCoordinates(location.Title);
             if (!coords) {
@@ -48,6 +38,7 @@ function fetchDataAndUpdate() {
                 continue;
             }
 
+            // Add marker to the map with energy details
             const marker = new maplibregl.Marker({
                 color: getMarkerColor(location.AvailableEnergy, location.RequiredEnergy)
             })
@@ -58,11 +49,11 @@ function fetchDataAndUpdate() {
 
             markers.push(marker);
 
-            addEnergyItem(location, coords);  // Add the list item
+            // Add the list item with zoom feature on click
+            addEnergyItem(location, coords);
         }
     })
-    .catch(error => console.error('Error fetching data:', error))
-    .finally(() => hideLoading());  // Hide loading overlay after data loads
+    .catch(error => console.error('Error fetching data:', error));
 }
 
 // Helper function to clear markers and list items
