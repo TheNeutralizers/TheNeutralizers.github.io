@@ -1,21 +1,17 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Neutralizeurs' present a Map!</title>
-    <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div id="map"></div>
-    <div id="weather-list">
-        <h2>Datacenters</h2>
-        <div id="list-container"></div>
-    </div>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+title {
+    color: antiquewhite;
+}
 
-    <!-- Load MapLibre and custom script -->
-    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+#map {
+    height: 80vh; /* Adjust height as needed */
+    width: 100%;  /* Full width of the container */
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 24px;
+}
