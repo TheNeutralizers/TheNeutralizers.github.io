@@ -1,50 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Neutralizeurs' present a Map!</title>
+    <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="map"></div>
+    <div id="weather-list">
+        <h2>Datacenters</h2>
+        <div id="list-container"></div>
+    </div>
 
-#map {
-    height: 80vh;
-    width: 100%;
-}
-
-#weather-list {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 25%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    overflow-y: auto;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-h2 {
-    color: aliceblue;
-    text-align: center;
-    background-color: #3b3a3a;
-    margin: 0;
-    padding: 10px;
-}
-
-.weather-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.weather-item:hover {
-    background-color: rgba(100, 100, 100, 0.3);
-}
-
-h1 {
-    margin-top: 20px;
-    font-size: 24px;
-}
+    <!-- Load MapLibre and custom script -->
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
