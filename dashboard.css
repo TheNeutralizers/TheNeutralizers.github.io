@@ -1,14 +1,47 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-}
-title {
-    color: antiquewhite;
+    margin: 0;
+    padding: 0;
 }
 
 #map {
-    height: 80vh; /* Adjust height as needed */
-    width: 100%;  /* Full width of the container */
+    height: 80vh;
+    width: 100%;
+}
+
+#weather-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+h2 {
+    color: aliceblue;
+    text-align: center;
+    background-color: #3b3a3a;
+    margin: 0;
+    padding: 10px;
+}
+
+.weather-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.weather-item:hover {
+    background-color: rgba(100, 100, 100, 0.3);
 }
 
 h1 {
