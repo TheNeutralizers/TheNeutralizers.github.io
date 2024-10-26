@@ -83,6 +83,7 @@
         .then(response => response.json())
         .then(data => {
             console.log('Fetched data:', data);
+            print("Data was fetched")
 
             const locations = data.records || data; 
 
