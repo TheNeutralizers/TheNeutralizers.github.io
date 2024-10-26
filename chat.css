@@ -117,3 +117,102 @@
         width: 160px;
         color: #9acd32;
     }
+  /* Adjusted Sidebar Width */
+  .sidebar {
+    width: 200px; /* Reduced from 250px to 200px */
+    background-color: #1b1b1b; /* Slightly lighter gray */
+    border: 1px solid #006400;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  /* Adjusted Flex Properties for Larger Chat Area */
+  .main-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+  }
+  
+  .chat-container {
+    flex: 3; /* Increased flex grow to allocate more space */
+    border: 1px solid #006400; /* Dark green border */
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212; /* Dark gray background */
+  }
+  
+  /* Media Queries for Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        width: 100%;
+        height: auto; /* Allow the container to adjust height automatically */
+    }
+    body {
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    .chat-container {
+        border-radius: 10px;
+        height: 750px;
+        flex: none; /* Remove flex-grow to let it adjust naturally */
+    }
+    .sidebar {
+        width: 95%;
+        border-radius: 0;
+        margin-top: 10px;
+        flex: none; /* Remove flex-grow to stack below chat-container */
+    }
+    .chat-header {
+        border-top-right-radius: 10px;
+    }
+    .input-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #user-input {
+        width: 100%;
+        margin-bottom: 5px;
+        box-sizing: border-box;
+    }
+    #send-button {
+        width: 100%;
+        margin-left: 0;
+    }
+    .message {
+        max-width: 100%;
+    }
+    .environmental-data p strong {
+        width: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+        height: auto;
+        padding: 10px;
+    }
+    .chat-header,
+    .sidebar-header {
+        font-size: 1em;
+    }
+    .environmental-data p {
+        font-size: 0.9em;
+    }
+    #user-input,
+    #send-button {
+        font-size: 1em;
+        padding: 10px;
+    }
+    #send-button {
+        padding: 10px;
+    }
+    .message {
+        font-size: 1em;
+    }
+  }
