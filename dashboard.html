@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Neutralizeurs' present a Map!</title>
     <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="map"></div>
     <div id="weather-list">
         <h2>Datacenters</h2>
         <div id="list-container"></div>
+    </div>
+    <div id="loading-spinner">
+        <div class="spinner"></div> 
+        <p>Loading the data...</p>
     </div>
 
     <!-- Load MapLibre and custom script -->
