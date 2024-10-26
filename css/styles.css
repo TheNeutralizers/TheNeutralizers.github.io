@@ -95,17 +95,17 @@ h1, h3 {
   color: #ffffff; /* Set text color to white */
 }
 
-@media only screen and (max-width: 500px){
-  .top-image-container {
-    text-align: center; /* Center the image horizontally */
-    padding: 20px; /* Add some spacing around the image */
-  }
+.top-image-container {
+  text-align: center; /* Center the image horizontally */
+  padding: 20px; /* Add some spacing around the image */
 }
+
 
 .top-image {
   max-width: 20%; /* Ensure the image is responsive */
   height: auto;
 }
+
 
 
 body {
@@ -11057,7 +11057,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-masthead.jpg");
+  background: url("../assets/img/bg-masthead.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
