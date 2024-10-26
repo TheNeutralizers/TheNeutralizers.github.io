@@ -70,6 +70,8 @@
             zoom: 2,
             container: 'map',
         });
+        test = ""; //DELETE
+        
 
         // Load the energy data from the backend API
         fetch('https://app.nocodb.com/api/v2/tables/m2zl15jsfkzxfrz/records', {
@@ -83,14 +85,15 @@
         .then(response => response.json())
         .then(data => {
             console.log('Fetched data:', data);
-            print("Data was fetched")
+            
+            locations = data.list
+            test = data // DELETE
+            // const locations = data.records || data; 
 
-            const locations = data.records || data; 
-
-            if (!locations || locations.length === 0) {
-                console.warn('No data found or incorrect data structure.');
-                return;
-            }
+            // if (!locations || locations.length === 0) {
+            //     console.warn('No data found or incorrect data structure.');
+            //     return;
+            // }
 
             // Loop through locations to create markers and list items
             for (let i = 0; i < locations.length; i++) {
@@ -122,9 +125,10 @@
         function getCoordinates(city) {
             const coordinates = {
                 'Frankfurt': [8.6821, 50.1109],
-                'Columbus': [-82.9988, 39.9612],
-                'Toronto': [-79.3470, 43.6510],
-                'Dublin': [-6.2603, 53.3498]
+                'Ohio': [-82.9988, 39.9612],
+                'Canada': [-79.3470, 43.6510],
+                'Ireland': [-6.2603, 53.3498],
+                'Cologne': [6.9603, 50.9375]
             };
             return coordinates[city];
         }
