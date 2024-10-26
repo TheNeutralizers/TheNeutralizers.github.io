@@ -79,7 +79,7 @@ function getCoordinates(city) {
         'Canada': [-79.3470, 43.6510],
         'Ireland': [-6.2603, 53.3498],
         'Cologne': [6.9603, 50.9375],
-        'Casablanca': [33.5731, -7.5898]
+        'Casablanca': [-7.5898, 33.5731]
     };
     return coordinates[city];
 }
