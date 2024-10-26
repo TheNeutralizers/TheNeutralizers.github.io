@@ -55,7 +55,7 @@ fetch('https://app.nocodb.com/api/v2/tables/m2zl15jsfkzxfrz/records', {
         })
         .setLngLat(coords)
         .setPopup(new maplibregl.Popup({ offset: 25 })
-            .setText(`Available: ${locationData.AvailableEnergy} kWh, Required: ${locationData.RequiredEnergy} kWh, Renewable: ${locationData.RenewableEnergy}%, CO2 Emissions: ${locationData.CarbonEmissions} g/kWh, Light Index: ${locationData.LightIndex}`))
+            .setText(`Available: ${locationData.AvailableEnergy} kWh, Required: ${locationData.RequiredEnergy} kWh, CO2 Emissions: ${locationData.CarbonEmissions} g/kWh, Light Index: ${locationData.LightIndex}`))
         .addTo(map);
 
         // Add the list item with zoom feature on click
@@ -104,7 +104,6 @@ function addEnergyItem(locationData, coords) {
         <strong>${locationData.Title}</strong><br>
         Available Energy: ${locationData.AvailableEnergy} kWh<br>
         Required Energy: ${locationData.RequiredEnergy} kWh<br>
-        Renewable Energy: ${locationData.RenewableEnergy}%<br>
         CO2 Emissions: ${locationData.CarbonEmissions} g/kWh<br>
         Light Index: ${locationData.LightIndex}%
     `;
@@ -129,7 +128,6 @@ function updateEnergyItem(locationData, coords) {
         <strong>${locationData.Title}</strong><br>
         Available Energy: ${locationData.AvailableEnergy} kWh<br>
         Required Energy: ${locationData.RequiredEnergy} kWh<br>
-        Renewable Energy: ${locationData.RenewableEnergy}%<br>
         CO2 Emissions: ${locationData.CarbonEmissions} g/kWh<br>
         Light Index: ${locationData.LightIndex}%
     `;
